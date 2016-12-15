@@ -56,7 +56,8 @@ class TechcrunchCrawler:
     def csv_output(self,filehandler):
         """Write the processed rows to the given filename
                """
-        FIELDNAMES = ['company name', 'company website', 'article title', 'article url']
+        FIELDNAMES = ['article title', 'article url', 'company name', 'company website']
+
         writer = csv.DictWriter(filehandler, delimiter=',', fieldnames=FIELDNAMES)
         writer.writeheader()
         writer.writerows(self.results)
