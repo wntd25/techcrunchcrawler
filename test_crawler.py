@@ -9,7 +9,7 @@ class TestCrawler(unittest.TestCase):
     def setUp(self):
         self.tc = techcrunchcrawler.TechcrunchCrawler('http://test.com')
         result1={'company name':'abc', 'company website':'http://abc.com', 'article title':'On abc', 'article url':'http://abc.com/xyz'}
-        self.expected_output1='company name,company website,article title,article url\r\nabc,http://abc.com,On abc,http://abc.com/xyz\r\n'
+        self.expected_output1='article title,article url,company name,company website\r\nOn abc,http://abc.com/xyz,abc,http://abc.com\r\n'
         self.expected_result2={'article url': 'https://techcrunch.com/2016/12/13/neveragain-muslim-registry/', 'company website': 'n/a', 'article title': u'Tech companies should probably come out against a Muslim registry now', 'company name': u'Donald J. Trump'}
 
         self.tc.results.append(result1)
